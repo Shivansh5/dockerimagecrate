@@ -21,10 +21,10 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag shivansh90/myimage:$(date +"%M")
+      run: docker build . --file Dockerfile --tag shivansh90/myimage:$(date +"%H")
       
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/myimage:$(date +"%M") 
+      run: docker push ${{secrets.DOCKER_USER}}/myimage:$(date +"%H") 
       
       
       
